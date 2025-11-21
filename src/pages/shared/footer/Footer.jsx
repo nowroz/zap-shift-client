@@ -7,7 +7,7 @@ import youtubeIcon from "../../../assets/youtube-icon.png";
 
 const Footer = () => {
   return (
-    <section className="custom-container mx-auto mt-40 mb-8 py-20 bg-[#0B0B0B] rounded-4xl flex flex-col items-center gap-8">
+    <section className="custom-container mx-auto mt-40 py-20 bg-[#0B0B0B] rounded-4xl flex flex-col items-center gap-8">
       <div className="flex flex-col items-center gap-4">
         <Logo darkMode={true}></Logo>
         <p className="w-[70%] text-center text-[#DADADA]">
