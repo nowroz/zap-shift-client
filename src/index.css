@@ -6,6 +6,18 @@
   themes: light --default;
 }
 
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  --color-base-100: white;
+
+  --color-primary: #caeb66;
+
+  --color-primary-content: #1f1f1f;
+  --color-base-content: #606060;
+}
+
 /* Apply 'Urbanist' font-family to whole body */
 body {
   font-family: "Urbanist", sans-serif;
@@ -19,4 +31,22 @@ body {
 .custom-container {
   width: 100%;
   max-width: 1400px;
+}
+
+/* NavLink state styles */
+a.active {
+  @apply font-bold bg-primary px-4 py-2 rounded-[50px] duration-100;
+}
+
+a.pending {
+  @apply opacity-50;
+}
+
+/* shared buttons styles */
+.btn-primary {
+  @apply bg-primary rounded-xl px-6 text-primary-content font-bold;
+}
+
+.btn-secondary {
+  @apply bg-base-100 border-[#DADADA] rounded-xl shadow-none px-6 text-base-content font-bold;
 }
