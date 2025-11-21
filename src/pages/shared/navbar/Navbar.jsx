@@ -2,6 +2,7 @@ import { MdArrowOutward } from "react-icons/md";
 import Logo from "../../../components/logo/Logo";
 import navPaths from "../../../navPaths/navPaths";
 import NavigationLink from "./NavigationLink";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const navLinks = navPaths.map((navPath) => (
@@ -10,7 +11,9 @@ const Navbar = () => {
 
   return (
     <nav className="custom-container mx-auto p-5 bg-base-100 rounded-2xl grid grid-cols-4">
-      <Logo></Logo>
+      <Link to="/">
+        <Logo></Logo>
+      </Link>
       <ul className="col-span-2 flex justify-center items-center gap-8">
         {navLinks}
       </ul>

@@ -3,7 +3,9 @@ const Logo = ({ darkMode }) => {
   return (
     <div className="flex items-end">
       <img src={logoImg} alt="" className="-mr-4" />
-      <h3 className={`text-3xl font-extrabold ${darkMode && "text-white"}`}>
+      <h3
+        className={`text-3xl font-extrabold ${darkMode ? "text-white" : "text-[#303030]"}`}
+      >
         ZapShift
       </h3>
     </div>
