@@ -7,6 +7,12 @@ import Register from "../pages/auth/register/Register";
 import Login from "../pages/auth/login/Login";
 import BeARider from "../pages/rider/BeARider";
 import PrivateRoute from "./PrivateRoute";
+import SendParcel from "../pages/sendParcel/SendParcel";
+import DashboardLayout from "../layouts/DashboardLayout";
+import MyParcels from "../pages/dashboard/myParcels/MyParcels";
+import Payment from "../pages/dashboard/payment/Payment";
+import PaymentSuccessfull from "../pages/dashboard/payment/PaymentSuccessfull";
+import PaymentCancelled from "../pages/dashboard/payment/PaymentCancelled";
 
 const router = createBrowserRouter([
   {
@@ -31,8 +37,9 @@ const router = createBrowserRouter([
         element: <h1>About Us</h1>,
       },
       {
-        path: "pricing",
-        element: <h1>Pricing</h1>,
+        path: "send-parcel",
+        loader: () => fetch("/warehouses.json"),
+        Component: SendParcel,
       },
       {
         path: "blog",
@@ -63,6 +70,32 @@ const router = createBrowserRouter([
       {
         path: "register",
         Component: Register,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "my-parcels",
+        Component: MyParcels,
+      },
+      {
+        path: "payment/:id",
+        Component: Payment,
+      },
+      {
+        path: "payment-success",
+        Component: PaymentSuccessfull,
+      },
+      {
+        path: "payment-cancelled",
+        Component: PaymentCancelled,
       },
     ],
   },

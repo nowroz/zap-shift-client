@@ -14,7 +14,7 @@ const Register = () => {
   } = useForm();
 
   const location = useLocation();
-  const redirection = location?.state.redirection ?? "/";
+  const redirection = location.state?.redirection ?? "/";
 
   const navigate = useNavigate();
 
